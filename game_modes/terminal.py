@@ -60,6 +60,11 @@ class Grid:
 
 	@property
 	def empty(self):
+		"""Empty Property
+
+		Returns:
+			__empty: Empty Grid
+		"""
 		return self.__empty
 
 def main() -> int:
