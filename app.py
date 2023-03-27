@@ -57,8 +57,7 @@ if __name__ == '__main__':
     import sys
     from game_modes.graphic import main as graphic
     from game_modes.terminal import main as terminal
-    
-    if main(sys.argv):
-        print("Game ended without issue")
-    else:
-        print("[Warning] Game ended with issues")
+    try:
+    	main(sys.argv)
+    except BaseException as e:
+        print(e)

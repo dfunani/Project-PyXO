@@ -9,14 +9,16 @@ class Grid:
 	"""Grid Class
 	Abstracts the creation and display of the X and O on a terminal 3 x 3 grid
 	"""
-	__empty: list[list[str]] = [["", "", ""], ["", "", ""], ["", "", ""]] # empty matrix indicating an empty board
 
-	def __init__(self, matrix: list[list[str]] = __empty) -> None:
+	def __init__(self, matrix: list[list[str]] = None) -> None:
 		"""Constructor
 
 		Args:
 			matrix (list[list[str]], optional): matrix to include in the grid. Defaults to _empty.
 		"""
+		self.__empty: list[list[str]] = [["", "", ""], ["", "", ""], ["", "", ""]] # empty matrix indicating an empty board
+		if not matrix:
+			matrix = self.__empty
 		if Grid.check_matrix(matrix):
 			self._matrix = matrix
 		else:
